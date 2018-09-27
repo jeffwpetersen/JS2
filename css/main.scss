@@ -1,0 +1,87 @@
+---
+---
+
+@import "normalize";
+@import "susy";
+@import "vendor/plumber";
+@import "breakpoint";
+@import "fonts";
+@import "font-awesome/font-awesome";
+@import "base";
+@import "plugins/svg-grid";
+@import "baseline-grid";
+@import "structure";
+@import "style";
+@import "nav";
+
+
+.main-section {
+    @include baseline-grid();
+}
+.site-width {
+   //background: susy-svg-grid() no-repeat scroll;
+}
+
+
+html {
+  // set font size for responsive type
+  font-size: $base-font-size;
+  background-color: darkgray;
+}
+
+body {
+  font-family: $body-font;
+  text-rendering: optimizeLegibility;
+}
+
+.outerspace {
+  background-color: white;
+}
+
+
+/*
+* in progress
+*/
+
+header {
+  background-image: url("/images/img.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  text-align: center;
+  overflow: auto;
+  padding-bottom: $base-grid-height;
+  color: white;
+  //   @include baseline-grid();
+}
+
+.columns {
+  background-color: gray;
+  border: solid 1px lightcoral;
+}
+
+blockquote {
+  @include plumber($baseline: $quote-baseline);
+  font-family: $quote-font;
+}
+
+@include breakpoint(100px) {
+
+}
+
+.background {
+  background-color: $theme-light;
+}
+
+
+
+/*
+* Styleguide
+*/
+
+.margin-top {
+  margin-top: 1rem;
+}
+.margin-top-none {
+  margin-top: 0 !important;
+}

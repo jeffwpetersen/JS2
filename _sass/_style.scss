@@ -1,0 +1,227 @@
+a {
+  color: $theme-color;
+  &:link {
+    color: $theme-color;
+  }
+  &:visited {
+    color: $theme-dark;
+  }
+  &:hover {
+    color: $theme-comp;
+  }
+  &:active {
+    color: $theme-comp-dark;
+    text-decoration: solid;
+  }
+  text-decoration: none;
+}
+
+h2, h3 {
+  color: #555555;
+}
+
+/*
+* Typography
+*/
+
+// http://nowodzinski.pl/syncope/
+
+p {
+  @include plumber(
+          $grid-height: $base-grid-height,
+          $baseline: 0.158203,
+          $font-size: 1.05,
+          $line-height: 2,
+          $leading-top: 0,
+          $leading-bottom: 1
+  );
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+.half-space p, p.half-space {
+  @include plumber(
+          $font-size: 1.5,
+          $line-height: 1,
+          $leading-top: 0,
+          $leading-bottom: 1
+  );
+  line-height: 1.5em;
+}
+
+h1 {
+  font-family: $headline-font;
+  @include plumber(
+          $grid-height: $base-grid-height,
+          $baseline: $headline-baseline, // https://jamonserrano.github.io/plumber-sass/baselines/
+          $font-size: 5.06,
+          $line-height: 6,
+          $leading-top: 4,
+          $leading-bottom: 1
+  );
+  @include breakpoint($phone) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 5.06 * .55,
+            $line-height: 3,
+            $leading-top: 6,
+            $leading-bottom: 1
+    );
+  }
+  @include breakpoint($tween) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 5.06 * .7,
+            $line-height: 4,
+            $leading-top: 6,
+            $leading-bottom: 2
+    );
+  }
+  @include breakpoint($desktop) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 5.06 * .8,
+            $line-height: 4,
+            $leading-top: 5,
+            $leading-bottom: 2
+    );
+  }
+}
+
+h2 {
+  font-family: $headline-font;
+  @include plumber(
+          $grid-height: $base-grid-height,
+          $baseline: $headline-baseline,
+          $font-size: 3.38,
+          $line-height: 4,
+          $leading-top: 3,
+          $leading-bottom: 1
+  );
+  @include breakpoint($phone) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 3.38 * .55,
+            $line-height: 2,
+            $leading-top: 3,
+            $leading-bottom: 2
+    );
+  }
+  @include breakpoint($tween) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 3.38 * .7,
+            $line-height: 3,
+            $leading-top: 3,
+            $leading-bottom: 1
+    );
+  }
+  @include breakpoint($desktop) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 3.38 * .8,
+            $line-height: 3,
+            $leading-top: 3,
+            $leading-bottom: 1
+    );
+  }
+}
+
+h3 {
+  font-family: $headline-font;
+  @include plumber(
+          $grid-height: $base-grid-height,
+          $baseline: $headline-baseline,
+          $font-size: 2.25,
+          $line-height: 3,
+          $leading-top: 2,
+          $leading-bottom: 1
+  );
+  @include breakpoint($phone) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 2.25 * .55,
+            $line-height: 2,
+            $leading-top: 1,
+            $leading-bottom: 1
+    );
+    margin-bottom: 0;
+  }
+  @include breakpoint($tween) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 2.25 * .7,
+            $line-height: 2,
+            $leading-top: 2,
+            $leading-bottom: 1
+    );
+  }
+  @include breakpoint($desktop) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 2.25 * .8,
+            $line-height: 2,
+            $leading-top: 2,
+            $leading-bottom: 1
+    );
+  }
+}
+
+h4 {
+  font-family: $headline-font;
+  @include plumber(
+          $grid-height: $base-grid-height,
+          $baseline: $headline-baseline,
+          $font-size: 1.50,
+          $line-height: 2,
+          $leading-top: 1,
+          $leading-bottom: 1
+  );
+  @include breakpoint($phone) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 1,
+            $line-height: 2,
+            $leading-top: 0,
+            $leading-bottom: 0
+    );
+  }
+  @include breakpoint($tween) {
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline,
+            $font-size: 1,
+            $line-height: 2,
+            $leading-top: 1,
+            $leading-bottom: 0
+    );
+  }
+}
+
+ul li {
+  @include plumber(
+          $grid-height: $base-grid-height,
+          $baseline: 0.158203,
+          $font-size: 1,
+          $line-height: 2,
+          $leading-top: 0,
+          $leading-bottom: 1
+  );
+}
+
+
+.lighter {
+  font-family: opensans_light;
+  font-weight: lighter !important;
+}

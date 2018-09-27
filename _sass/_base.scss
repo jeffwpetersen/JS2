@@ -1,0 +1,63 @@
+
+$susy: (
+        'columns': susy-repeat(12),
+        'gutters': 2rem,
+        'spread': 'narrow',
+        'container-spread': 'narrow',
+        'svg-grid-colors': #e5ffff,
+);
+
+//$max-width-of-site-content: 1400px;
+
+/*
+* Breakpoints.
+*/
+
+$phone: 1px 668px;
+$tween: 669px 1211px;
+$desktop: 1212px 1920px;
+$big: 1921px;
+
+/*
+* Plumber Sizing for baseline typography
+*/
+
+$base-font-size: 16px; // The font size set on the root html element.
+$base-grid-height: 1rem; // Plumber rem grid height
+$base-line-height-px: ($base-font-size * $base-grid-height) / 1rem; // Visual Layout Grid height. Divide by to remove rem
+
+
+$body-font: "opensans", sans-serif;
+$body-baseline: 0.16;
+
+$headline-font: "helvetica", sans-serif;
+$headline-baseline: .16;
+
+$quote-font: Georgia, serif;
+$quote-baseline: 0.151123;
+
+//
+// Plumber mixin for baseline adjustments.
+//
+
+@include plumber-set-defaults(
+        $grid-height: $base-grid-height,
+        $baseline: 0.113000, // https://jamonserrano.github.io/plumber-sass/baselines/
+        $font-size: 1,
+        $line-height: 2,
+        $leading-top: 1,
+        $leading-bottom: 1
+);
+
+
+/*
+* Colors
+*/
+
+$theme-color: #427AA1;
+$theme-dark: #05668D;
+$theme-light: #ebf2fa;
+$theme-comp: #a5be00;
+$theme-comp-dark: #679436
+
+
