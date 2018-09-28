@@ -17,6 +17,7 @@
 
 .main-section {
   //@include baseline-grid();
+  padding-bottom: 2rem;
 }
 .site-width {
    //background: susy-svg-grid() no-repeat scroll;
@@ -58,19 +59,27 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: right 0 bottom -100px;
-  padding-bottom: 4rem;
   .lib-content {
+    min-height: 100vh;
     @include breakpoint($phone) {
+      margin-bottom: 7rem;
     }
   }
   h1 {
     letter-spacing: 12px;
   }
-  .first-thing, .second-thing {
-    padding-bottom: 20rem;
+  .two-things {
+    min-height: 80vh;
+    align-items: center;
     @include breakpoint($phone) {
-      padding-bottom: 0rem;
+      align-items: baseline;
     }
+    @include breakpoint($tween) {
+      align-items: baseline;
+    }
+  }
+  .first-thing, .second-thing {
+
   }
   align-items: center;
 }
