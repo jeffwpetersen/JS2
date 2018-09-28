@@ -18,6 +18,7 @@
 .main-section {
   //@include baseline-grid();
   padding-bottom: 2rem;
+  padding-top:  2rem;
 }
 .site-width {
    //background: susy-svg-grid() no-repeat scroll;
@@ -159,9 +160,8 @@ body {
 footer {
   background-color: $pink;
   color: $gray-8;
-  min-height: 50vh;
+  min-height: 100vh;
   color: white;
-  padding: 10rem 2rem;
   a {
     color: white;
   }
@@ -172,29 +172,51 @@ header {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  overflow: auto;
   padding-bottom: $base-grid-height;
   background-color: black;
   padding: 2rem 5rem;
-
+  padding-top: 10rem;
   h1.hero {
     margin: 0px !important;
     padding: 0px;
     border-bottom: solid 1px $theme-color;
+    text-align: center;
     @include plumber(
             $grid-height: $base-grid-height,
-            $baseline: $headline-baseline,
-            $font-size: 7,
-            $line-height: 5,
+            $baseline: .9,
+            $font-size: 10,
+            $line-height: 3,
             $leading-top: 4,
-            $leading-bottom: 4
+            $leading-bottom: 1
     );
     @include breakpoint($phone) {
       @include plumber(
-              $font-size: 3.25,
-              $line-height: 2
+              $grid-height: $base-grid-height,
+              $baseline: .9,
+              $font-size: 5,
+              $line-height: 3,
+              $leading-top: 4,
+              $leading-bottom: 1
       );
-      padding-top: 15px;
+      padding-bottom: 0;
+    }
+    @include breakpoint($tween) {
+      @include plumber(
+              $font-size: 7.25,
+              $line-height: 1
+      );
+      padding-top: 1rem;
+    }
+    .juniper {
+     font-family: opensans_light;
+    }
+    .studio {
+      font-family: "Helvetica";
+      font-weight: bold;
+      color: white;
+      a {
+        color: white;
+      }
     }
     a {
       color: $pink;
@@ -203,12 +225,16 @@ header {
       }
     }
   }
+  @include breakpoint($phone) {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+  }
 }
 
 .gallery {
   min-height: 100vh;
   background-color: #fbfbfb;
-  padding-top: 5rem;
+  padding: 5rem 2rem;
   text-align: center;
   .grid {
     align-items: center;

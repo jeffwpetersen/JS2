@@ -72,6 +72,9 @@ section {
         padding-left: 20%;
         padding-right: 20%;
         border-bottom: solid 2px $pink;
+        p {
+          line-height: 2rem;
+        }
       }
       main {
         grid-column: span 6;
