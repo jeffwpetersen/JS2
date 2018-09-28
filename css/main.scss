@@ -105,6 +105,9 @@ body {
 .brand-statement {
   color: $gray-5;
   line-height: 3rem;
+  @include breakpoint($phone) {
+    line-height: 2rem;
+  }
 }
 
 .pager {

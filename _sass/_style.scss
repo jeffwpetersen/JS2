@@ -91,7 +91,7 @@ a {
       @include plumber(
               $grid-height: $base-grid-height,
               $baseline: $headline-baseline,
-              $font-size: 5.06 * .55,
+              $font-size: 5.06 * .5,
               $line-height: 3,
               $leading-top: 6,
               $leading-bottom: 1
@@ -260,6 +260,11 @@ a {
   .lighter {
     font-family: $light-font !important;
     font-weight: 100 !important;
+  }
+  p.lighter {
+    @include breakpoint($phone) {
+      font-family: $body-font !important;
+    }
   }
 
   .bold {
