@@ -113,10 +113,8 @@ body {
 .pager {
   position: absolute;
   z-index: 100;
-  bottom: 0;
+  bottom: 2rem;
   right: 0;
-  left: 0;
-  height: 15vh;
   text-align: center;
   img {
   }
@@ -154,6 +152,7 @@ footer {
   color: $gray-8;
   min-height: 50vh;
   color: white;
+  padding: 10rem 2rem;
   a {
     color: white;
   }

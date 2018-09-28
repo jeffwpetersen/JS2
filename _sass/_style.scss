@@ -260,10 +260,11 @@ a {
   .lighter {
     font-family: $light-font !important;
     font-weight: 100 !important;
-  }
-  p.lighter {
     @include breakpoint($phone) {
-      font-family: $body-font !important;
+      font-family: latolight !important;
+    }
+    @include breakpoint($tween) {
+      font-family: latolight !important;
     }
   }
 
