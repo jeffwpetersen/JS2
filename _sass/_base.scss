@@ -14,8 +14,8 @@ $susy: (
 */
 
 $phone: 1px 668px;
-$tween: 669px 1211px;
-$desktop: 1212px 1920px;
+$tween: 669px 1311px;
+$desktop: 1312px 1920px;
 $big: 1921px;
 
 /*
@@ -28,10 +28,13 @@ $base-line-height-px: ($base-font-size * $base-grid-height) / 1rem; // Visual La
 
 
 $body-font: "opensans", sans-serif;
-$body-baseline: 0.16;
+$body-baseline: 0.112061;
 
-$headline-font: "helvetica", sans-serif;
-$headline-baseline: .16;
+$headline-font: "opensans_bold", sans-serif;
+$headline-baseline: .161;
+
+$light-font: "latohairline";
+$light-font-baseline: 0.113;
 
 $quote-font: Georgia, serif;
 $quote-baseline: 0.151123;
@@ -56,8 +59,17 @@ $quote-baseline: 0.151123;
 
 $theme-color: #427AA1;
 $theme-dark: #05668D;
-$theme-light: #ebf2fa;
+$theme-tint: #ebf2fa;
 $theme-comp: #a5be00;
-$theme-comp-dark: #679436
+$theme-comp-dark: #679436;
+$pink: #FF1493;;
 
-
+$gray-1: #191919;
+$gray-2: #323232;
+$gray-3: #4c4c4c;
+$gray-4: #666666;
+$gray-5: #7f7f7f;
+$gray-6: #999999;
+$gray-7: #b2b2b2;
+$gray-8: #cccccc;
+$gray-9: #e5e5e5;

@@ -5,13 +5,8 @@
 <body class="body">
 <div class="outerspace">
     <header class="section">
-        <div class="site-width">
-            <h1>Vertical Rhythm<br>&<br>Jekyll</h1>
-        </div>
+        {% include header.html %}
     </header>
-    <nav class="section">
-        <div class="site-width">{% include nav.html %}</div>
-    </nav>
     <section class="section main-section">
         <div class="site-width layout-container">
             <aside class="aside-first">{% include left_aside.html %}</aside>
@@ -24,11 +19,12 @@
             </aside>
         </div>
     </section>
-    <section class="section background">
+    {% include index-blocks.html %}
+    <section class="section background gallery" id="juniperstudiohome">
         <div class="site-width">{% include gallery.html %}</div>
     </section>
     <footer class="section">
-        <div class="site-width"><h1>footer</h1></div>
+            {% include footer.html %}
     </footer>
     {% include script.html %}
 </div>

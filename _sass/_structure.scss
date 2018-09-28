@@ -32,9 +32,13 @@ body {
   margin-right: auto;
 }
 
+section {
+  position: relative;
+}
+
 .section {
-padding-left: 1rem;
-padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /*
@@ -64,6 +68,10 @@ padding-right: 1rem;
     @include breakpoint($tween) {
       .aside-first {
         grid-column: span 12;
+        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
+        border-bottom: solid 2px $pink;
       }
       main {
         grid-column: span 6;
@@ -76,10 +84,54 @@ padding-right: 1rem;
     }
     @include breakpoint($big) {
     }
-
-
   }
 }
+
+/*
+* Grid Layouts
+*/
+
+.one-three-one {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-column-gap: 2rem;
+  .first-item {
+    grid-column: 1;
+  }
+  .second-item {
+    grid-column: 2;
+  }
+  .third-item {
+    grid-column: 1;
+  }
+  @include breakpoint($phone) {
+    display: flex;
+    flex-direction: column;
+  }
+  @include breakpoint($tween) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.two-things {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 2rem;
+  min-height: 100vh;
+  .first-thing {
+    grid-column: 1;
+  }
+  .second-thing {
+    grid-column: 2;
+  }
+  @include breakpoint($phone) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
 
 .grid {
   display: grid;
@@ -101,10 +153,3 @@ padding-right: 1rem;
   }
 }
 
-
-
-nav {
-  ul {
-    display: flex;
-  }
-}
