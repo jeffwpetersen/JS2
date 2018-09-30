@@ -241,3 +241,49 @@ header {
   }
   align-items: center;
 }
+
+.footer-contact-us {
+  overflow: hidden;
+  font-family: latohairline;
+  h1 {
+    font-family: latohairline;
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: $headline-baseline, // https://jamonserrano.github.io/plumber-sass/baselines/
+            $font-size: 16.06,
+            $line-height: 10,
+            $leading-top: 4,
+            $leading-bottom: 1
+    );
+    @include breakpoint($phone) {
+      @include plumber(
+              $grid-height: $base-grid-height,
+              $baseline: $headline-baseline,
+              $font-size: 8.06 * .5,
+              $line-height: 3,
+              $leading-top: 6,
+              $leading-bottom: 1
+      );
+    }
+    @include breakpoint($tween) {
+      @include plumber(
+              $grid-height: $base-grid-height,
+              $baseline: $headline-baseline,
+              $font-size: 10.06 * .7,
+              $line-height: 4,
+              $leading-top: 6,
+              $leading-bottom: 2
+      );
+    }
+    @include breakpoint($desktop) {
+      @include plumber(
+              $grid-height: $base-grid-height,
+              $baseline: $headline-baseline,
+              $font-size: 16.06 * .8,
+              $line-height: 10,
+              $leading-top: 5,
+              $leading-bottom: 2
+      );
+    }
+  }
+}
