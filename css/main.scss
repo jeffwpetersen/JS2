@@ -192,14 +192,14 @@ header {
     @include breakpoint($phone) {
       @include plumber(
               $grid-height: $base-grid-height,
-              $baseline: .9,
+              $baseline: .1,
               $font-size: 5,
               $line-height: 3,
               $leading-top: 4,
               $leading-bottom: 1
       );
       padding-bottom: 0;
-      font-size: 10vmin;
+      font-size: 12vw;
     }
     @include breakpoint($tween) {
       @include plumber(
