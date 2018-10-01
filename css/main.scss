@@ -256,7 +256,7 @@ header {
     @include plumber(
             $grid-height: $base-grid-height,
             $baseline: $headline-baseline, // https://jamonserrano.github.io/plumber-sass/baselines/
-            $font-size: 16.06,
+            $font-size: 14.06,
             $line-height: 12,
             $leading-top: 4,
             $leading-bottom: 1
@@ -276,7 +276,7 @@ header {
       @include plumber(
               $grid-height: $base-grid-height,
               $baseline: $headline-baseline,
-              $font-size: 10.06 * .7,
+              $font-size: 6,
               $line-height: 6,
               $leading-top: 6,
               $leading-bottom: 2
@@ -286,7 +286,7 @@ header {
       @include plumber(
               $grid-height: $base-grid-height,
               $baseline: $headline-baseline,
-              $font-size: 16.06 * .8,
+              $font-size: 8,
               $line-height: 10,
               $leading-top: 5,
               $leading-bottom: 2
