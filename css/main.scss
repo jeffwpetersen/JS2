@@ -246,21 +246,27 @@ header {
 .footer-contact-us {
   overflow: hidden;
   font-family: latohairline;
+  margin-bottom: 2rem;
+  @include breakpoint($phone) {
+    font-family: Lato;
+  }
+
   h1 {
     font-family: latohairline;
     @include plumber(
             $grid-height: $base-grid-height,
             $baseline: $headline-baseline, // https://jamonserrano.github.io/plumber-sass/baselines/
             $font-size: 16.06,
-            $line-height: 10,
+            $line-height: 12,
             $leading-top: 4,
             $leading-bottom: 1
     );
     @include breakpoint($phone) {
+      font-family: latolight;
       @include plumber(
               $grid-height: $base-grid-height,
               $baseline: $headline-baseline,
-              $font-size: 8.06 * .5,
+              $font-size: 3,
               $line-height: 3,
               $leading-top: 6,
               $leading-bottom: 1
@@ -271,7 +277,7 @@ header {
               $grid-height: $base-grid-height,
               $baseline: $headline-baseline,
               $font-size: 10.06 * .7,
-              $line-height: 4,
+              $line-height: 6,
               $leading-top: 6,
               $leading-bottom: 2
       );
