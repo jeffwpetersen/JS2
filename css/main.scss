@@ -246,7 +246,7 @@ header {
 .footer-contact-us {
   overflow: hidden;
   font-family: latohairline;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   @include breakpoint($phone) {
     font-family: lato;
   }
