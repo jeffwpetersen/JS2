@@ -248,7 +248,7 @@ header {
   font-family: latohairline;
   margin-bottom: 2rem;
   @include breakpoint($phone) {
-    font-family: Lato;
+    font-family: lato;
   }
 
   h1 {
@@ -266,7 +266,7 @@ header {
       @include plumber(
               $grid-height: $base-grid-height,
               $baseline: $headline-baseline,
-              $font-size: 3,
+              $font-size: 4,
               $line-height: 3,
               $leading-top: 6,
               $leading-bottom: 1
