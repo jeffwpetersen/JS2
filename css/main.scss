@@ -199,6 +199,7 @@ header {
               $leading-bottom: 1
       );
       padding-bottom: 0;
+      font-size: 100vmin;
     }
     @include breakpoint($tween) {
       @include plumber(
