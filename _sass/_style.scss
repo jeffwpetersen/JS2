@@ -171,7 +171,7 @@ a {
             $font-size: 2.25,
             $line-height: 3,
             $leading-top: 2,
-            $leading-bottom: 1
+            $leading-bottom: 2
     );
     @include breakpoint($phone) {
       @include plumber(
@@ -201,7 +201,7 @@ a {
               $font-size: 2.25 * .8,
               $line-height: 2,
               $leading-top: 2,
-              $leading-bottom: 1
+              $leading-bottom: 2
       );
     }
   }
