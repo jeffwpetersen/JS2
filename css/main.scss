@@ -158,9 +158,11 @@ body {
 
 footer {
   background-color: $pink;
-  color: $gray-8;
   min-height: 100vh;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   a {
     color: white;
   }

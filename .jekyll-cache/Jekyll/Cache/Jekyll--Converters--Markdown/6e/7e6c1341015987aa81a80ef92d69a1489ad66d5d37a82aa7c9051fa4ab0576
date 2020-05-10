@@ -1,0 +1,400 @@
+I"�K<p>Full module on github: <a href="https://github.com/jeffwpetersen/drupal_8_xml_image_migration">Drupal 8 XML image migration</a></p>
+
+<p>Import content into Drupal 8 with associated image files using a csv or xml file. Importing will require 2 configuration files. One for the images and one for the nodes.
+Image files are references and need to be migrated and referenced using the id that uniquely identifies the imported item. This id is stored in the migrate system.</p>
+
+<p>First configure the source of your images data, in this case I’m useing the XML parser.<br />
+Define your id: I’m using the name of the image which I have labled with the machine name name_image.<br />
+Next define field names and then source location and destination.</p>
+
+<!-- more -->
+
+<h2 id="import-images">Import Images</h2>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+</pre></td><td class="code"><pre>    <span class="c1"># Migration configuration for copying and tagging a file for import</span>
+
+    <span class="na">id</span><span class="pi">:</span> <span class="s">import_image</span> <span class="c1">#migrate_machine_name</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s">Childrens Book Reading List.</span>
+    <span class="na">migration_group</span><span class="pi">:</span> <span class="s">book_data</span> <span class="c1">#migrate_machine_name</span>
+    <span class="na">migration_tags</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">file</span>
+      <span class="pi">-</span> <span class="s">image</span>
+    <span class="na">source</span><span class="pi">:</span>
+      <span class="c1"># We use the XML data parser plugin.</span>
+      <span class="na">plugin</span><span class="pi">:</span> <span class="s">url</span>
+      <span class="na">data_fetcher_plugin</span><span class="pi">:</span> <span class="s">http</span>
+      <span class="na">data_parser_plugin</span><span class="pi">:</span> <span class="s">xml</span>
+      <span class="c1"># Normally, this is one or more fully-qualified URLs or file paths. Because</span>
+      <span class="c1"># we can't hardcode your local URL, we provide a relative path here which</span>
+      <span class="c1"># hook_install() will rewrite to a full URL for the current site.</span>
+      <span class="na">urls</span><span class="pi">:</span> <span class="s">modules/drupal_8_xml_image_migration/book.xml</span>
+      <span class="c1"># Visit the URL above (relative to your site root) and look at it. You can see</span>
+      <span class="c1"># that &lt;response&gt; is the outer element, and each item we want to import is a</span>
+      <span class="c1"># &lt;position&gt; element. The item_xpath value is the xpath to use to query the</span>
+      <span class="c1"># desired elements.</span>
+      <span class="na">item_selector</span><span class="pi">:</span> <span class="s">/root/row</span>
+      <span class="c1"># Under 'fields', we list the data items to be imported. The first level keys</span>
+      <span class="c1"># are the source field names we want to populate (the names to be used as</span>
+      <span class="c1"># sources in the process configuration below). For each field we're importing,</span>
+      <span class="c1"># we provide a label (optional - this is for display in migration tools) and</span>
+      <span class="c1"># an xpath for retrieving that value. It's important to note that this xpath</span>
+      <span class="c1"># is relative to the elements retrieved by item_xpath.</span>
+      <span class="na">fields</span><span class="pi">:</span>
+        <span class="pi">-</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">name_image</span>
+          <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Position</span><span class="nv"> </span><span class="s">name'</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s">image</span>
+        <span class="pi">-</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">my_unique_id</span>
+          <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Unique</span><span class="nv"> </span><span class="s">position</span><span class="nv"> </span><span class="s">identifier'</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s">num</span>
+
+      <span class="c1"># Under 'ids', we identify source fields populated above which will uniquely</span>
+      <span class="c1"># identify each imported item. Use the id as the source: value in your field.</span>
+      <span class="c1"># The 'type' makes sure the migration map table</span>
+      <span class="c1"># uses the proper schema type for stored the IDs.</span>
+      <span class="na">ids</span><span class="pi">:</span>
+        <span class="na">name_image</span><span class="pi">:</span> <span class="c1"># &lt;----Important: unique id of item. In this case the name of the file.</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+      <span class="na">constants</span><span class="pi">:</span>
+        <span class="na">file_source_uri</span><span class="pi">:</span> <span class="s1">'</span><span class="s">public://book_covers_source'</span>
+        <span class="na">file_dest_uri</span><span class="pi">:</span> <span class="s1">'</span><span class="s">public://book_covers/image'</span>
+    <span class="na">destination</span><span class="pi">:</span>
+      <span class="c1"># We will be creating entities of type "file" this time.</span>
+      <span class="na">plugin</span><span class="pi">:</span> <span class="s1">'</span><span class="s">entity:file'</span>
+      <span class="c1"># mikeryan says...</span>
+      <span class="c1"># By default, the system-of-record for a migration is the source data -</span>
+      <span class="c1"># that is, when content is imported and the destination entity already exists,</span>
+      <span class="c1"># it is entirely replaced by the source data. For the import to partially overwrite</span>
+      <span class="c1"># the destination node, you can set "overwrite_properties" on the destination plugin:</span>
+      <span class="c1"># overwrite_properties:</span>
+          <span class="c1">#  - title</span>
+          <span class="c1">#  - body</span>
+          <span class="c1">#  - field_to_be_overwritten</span>
+          <span class="c1">## - field_that_wont_be_overwritten</span>
+    <span class="na">process</span><span class="pi">:</span>
+      <span class="na">file_source</span><span class="pi">:</span>
+        <span class="pi">-</span>
+          <span class="na">plugin</span><span class="pi">:</span> <span class="s">concat</span>
+          <span class="na">delimiter</span><span class="pi">:</span> <span class="s">/</span>
+          <span class="na">source</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">constants/file_source_uri</span>
+            <span class="pi">-</span> <span class="s">name_image</span>
+        <span class="c1"># Make sure we don't have any url-unfriendly characters.</span>
+        <span class="pi">-</span>
+          <span class="na">plugin</span><span class="pi">:</span> <span class="s">urlencode</span>
+      <span class="na">file_dest</span><span class="pi">:</span>
+        <span class="pi">-</span>
+          <span class="na">plugin</span><span class="pi">:</span> <span class="s">concat</span>
+          <span class="na">delimiter</span><span class="pi">:</span> <span class="s">/</span>
+          <span class="na">source</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">constants/file_dest_uri</span>
+            <span class="pi">-</span> <span class="s">name_image</span>
+        <span class="c1"># Make sure we don't have any url-unfriendly characters.</span>
+        <span class="pi">-</span>
+          <span class="na">plugin</span><span class="pi">:</span> <span class="s">urlencode</span>
+      <span class="c1"># Optionally you can set the fid: manually using my_unique_id</span>
+      <span class="c1"># NOTE: Existing fids will be overwritten by migration.</span>
+      <span class="c1"># fid: my_unique_id #</span>
+      <span class="na">uid</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+        <span class="na">default_value</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1'</span>
+      <span class="na">filemime</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+        <span class="na">default_value</span><span class="pi">:</span> <span class="s1">'</span><span class="s">image/jpeg'</span>
+      <span class="na">status</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+        <span class="na">default_value</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1'</span>
+      <span class="na">filename</span><span class="pi">:</span> <span class="s">name_image</span>
+      <span class="na">uri</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">file_copy</span>
+        <span class="na">source</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s1">'</span><span class="s">@file_source'</span>
+          <span class="pi">-</span> <span class="s1">'</span><span class="s">@file_dest'</span>
+    <span class="na">migration_dependencies</span><span class="pi">:</span>
+      <span class="na">optional</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">childbook_index</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="import-nodes">Import Nodes</h2>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+</pre></td><td class="code"><pre>    <span class="c1"># Migration configuration for drupal_8_xml_image_migration</span>
+    <span class="na">id</span><span class="pi">:</span> <span class="s">childbook_index</span> <span class="c1">#migrate_machine_name</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s">Child Books Import</span>
+    <span class="na">migration_group</span><span class="pi">:</span> <span class="s">book_data</span> <span class="c1">#migrate_machine_name</span>
+    <span class="na">source</span><span class="pi">:</span>
+      <span class="c1"># We use the XML data parser plugin.</span>
+      <span class="na">plugin</span><span class="pi">:</span> <span class="s">url</span>
+      <span class="na">data_fetcher_plugin</span><span class="pi">:</span> <span class="s">http</span>
+      <span class="na">data_parser_plugin</span><span class="pi">:</span> <span class="s">xml</span>
+      <span class="c1"># Normally, this is one or more fully-qualified URLs or file paths. Because</span>
+      <span class="c1"># we can't hardcode your local URL, we provide a relative path here which</span>
+      <span class="c1"># hook_install() will rewrite to a full URL for the current site.</span>
+      <span class="na">urls</span><span class="pi">:</span> <span class="s">modules/drupal_8_xml_image_migration/book.xml</span>
+      <span class="c1"># Visit the URL above (relative to your site root) and look at it. You can see</span>
+      <span class="c1"># that &lt;response&gt; is the outer element, and each item we want to import is a</span>
+      <span class="c1"># &lt;position&gt; element. The item_xpath value is the xpath to use to query the</span>
+      <span class="c1"># desired elements.</span>
+      <span class="na">item_selector</span><span class="pi">:</span> <span class="s">/root/row</span>
+      <span class="c1"># Under 'fields', we list the data items to be imported. The first level keys</span>
+      <span class="c1"># are the source field names we want to populate (the names to be used as</span>
+      <span class="c1"># sources in the process configuration below). For each field we're importing,</span>
+      <span class="c1"># we provide a label (optional - this is for display in migration tools) and</span>
+      <span class="c1"># an xpath for retrieving that value. It's important to note that this xpath</span>
+      <span class="c1"># is relative to the elements retrieved by item_xpath.</span>
+      <span class="na">fields</span><span class="pi">:</span>
+        <span class="pi">-</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">my_unique_id</span>
+          <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Unique</span><span class="nv"> </span><span class="s">position</span><span class="nv"> </span><span class="s">identifier'</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s">num</span>
+        <span class="pi">-</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">name_image</span>
+          <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Position</span><span class="nv"> </span><span class="s">name'</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s">image</span>
+        <span class="pi">-</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">name_body</span>
+          <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Position</span><span class="nv"> </span><span class="s">name'</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s">body</span>
+        <span class="pi">-</span>
+          <span class="na">name</span><span class="pi">:</span> <span class="s">name_title</span>
+          <span class="na">label</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Position</span><span class="nv"> </span><span class="s">name'</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s">caption_title</span>
+
+      <span class="c1"># Under 'ids', we identify source fields populated above which will uniquely</span>
+      <span class="c1"># identify each imported item. The 'type' makes sure the migration map table</span>
+      <span class="c1"># uses the proper schema type for stored the IDs.</span>
+      <span class="na">ids</span><span class="pi">:</span>
+        <span class="na">my_unique_id</span><span class="pi">:</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+    <span class="na">destination</span><span class="pi">:</span>
+      <span class="na">plugin</span><span class="pi">:</span> <span class="s">entity:node</span>
+      <span class="na">default_bundle</span><span class="pi">:</span> <span class="s">children_book</span> <span class="c1"># Destination bundle machine name.</span>
+    <span class="na">process</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+        <span class="na">default_value</span><span class="pi">:</span> <span class="s">children_book</span> <span class="c1"># my_destination_node_machine_name</span>
+      <span class="na">title</span><span class="pi">:</span> <span class="s">name_title</span> <span class="c1"># destination_machine_name: source_value_referenced_above</span>
+      <span class="na">sticky</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+        <span class="na">default_value</span><span class="pi">:</span> <span class="m">0</span>
+      <span class="na">body</span><span class="pi">:</span> <span class="s">name_body</span>
+      <span class="na">field_title</span><span class="pi">:</span> <span class="s">name_title</span>
+
+    <span class="c1"># field_image:</span>
+    <span class="c1">#    plugin: migration</span>
+    <span class="c1">#    migration: import_image #migrate_machine_name</span>
+    <span class="c1">#    # no_stub: true</span>
+    <span class="c1">#    # The name of the file is the id used to</span>
+    <span class="c1">#    # uniquely identify each imported item.</span>
+    <span class="c1">#    source: name_image # &lt;----Important: unique id of item. In this case the name of the file.</span>
+    <span class="c1">#    # Alternatively set and use the fid.</span>
+    <span class="c1">#    # source: my_unique_id</span>
+
+       <span class="c1">#################</span>
+       <span class="c1"># if you have alt and title fields you need to enclose the field name in</span>
+       <span class="c1"># quotes and add target_id.</span>
+       <span class="c1">#################</span>
+
+      <span class="s1">'</span><span class="s">field_image/target_id'</span><span class="pi">:</span>
+         <span class="na">plugin</span><span class="pi">:</span> <span class="s">migration</span>
+         <span class="na">migration</span><span class="pi">:</span> <span class="s">import_image</span> <span class="c1">#migrate_machine_name</span>
+         <span class="na">source</span><span class="pi">:</span> <span class="s">name_image</span> <span class="c1"># &lt;----Important: unique id of item. In this case the name of the file.</span>
+      <span class="s1">'</span><span class="s">field_image/alt'</span><span class="pi">:</span>
+         <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+         <span class="na">default_value</span><span class="pi">:</span> <span class="s1">'</span><span class="s">What</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">great</span><span class="nv"> </span><span class="s">selection</span><span class="nv"> </span><span class="s">timmy'</span>
+      <span class="s1">'</span><span class="s">field_image/title'</span><span class="pi">:</span>
+        <span class="na">plugin</span><span class="pi">:</span> <span class="s">default_value</span>
+        <span class="na">default_value</span><span class="pi">:</span> <span class="s1">'</span><span class="s">hooray</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">reading'</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+:ET
