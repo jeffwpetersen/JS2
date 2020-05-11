@@ -82,6 +82,3 @@ DEPENDENCIES
   breakpoint (~> 2.7.1)
   jekyll-feed (~> 0.6)
   minima (~> 2.0)
-
-BUNDLED WITH
-   2.1.4
