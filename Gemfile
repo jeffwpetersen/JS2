@@ -24,4 +24,5 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "breakpoint", "~> 2.7.1"
   gem "rouge", "~> 3.19.0"
+  gem "bundler", "!= 2.1.4"
 end
