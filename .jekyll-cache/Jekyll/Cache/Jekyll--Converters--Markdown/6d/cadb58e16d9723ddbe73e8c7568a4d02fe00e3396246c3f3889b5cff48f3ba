@@ -1,0 +1,5 @@
+I"J<p>I needed a menu based on a taxonomy for a high level sorting of blog posts. I generated a menu using the <a href="https://www.drupal.org/project/taxonomy_menu">Taxonomy Menu</a> module.</p>
+
+<p>But the menu does not have an active trail when used on a node. This module will add an active trail based on the taxonomy item</p>
+
+:ET

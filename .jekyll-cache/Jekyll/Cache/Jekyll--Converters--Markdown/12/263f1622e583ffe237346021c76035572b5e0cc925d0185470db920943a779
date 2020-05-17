@@ -1,0 +1,4 @@
+I"<p>I needed a menu based on a taxonomy for a high level sorting of blog posts. I generated a menu using the <a href="https://www.drupal.org/project/taxonomy_menu">Taxonomy Menu</a> module.
+This module will add an active trail based on the taxonomy term on the node.</p>
+
+:ET
