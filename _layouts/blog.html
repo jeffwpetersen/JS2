@@ -8,10 +8,11 @@
         {% include header.html %}
     </header>
     <section class="section main-section">
-        <div class="site-width layout-container">
-            <main>
-                {{content}}
-            </main>
+        <div class="blog layout-container">
+            <section class="drupal">
+                <h1 class="h3-size">{{ page.title | default: site.title }}</h1>
+            {{content}}
+            </section>
         </div>
     </section>
     <footer class="section">

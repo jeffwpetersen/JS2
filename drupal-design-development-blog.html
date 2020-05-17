@@ -1,0 +1,17 @@
+---
+layout: blog
+title: "The Juniper Studio Design & Development Blog"
+permalink: drupal-design-development-blog
+---
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <h4>{{ post.title }}</h4>
+        {{ post.date | date: '%B %d, %Y' }}
+        <div>
+            {{ post.excerpt }}
+            <a href="{{ post.url }}">Read More...</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

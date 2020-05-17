@@ -1,0 +1,5 @@
+I"Ý<p>Full module on github: <a href="https://github.com/jeffwpetersen/drupal_8_xml_image_migration">Drupal 8 XML image migration</a></p>
+
+<p>Import content into Drupal 8 with associated image files using a csv or xml file. Importing will require 2 configuration files. One for the images and one for the nodes.
+Image files are references and need to be migrated and referenced using the id that uniquely identifies the imported item. This id is stored in the migrate system.</p>
+:ET

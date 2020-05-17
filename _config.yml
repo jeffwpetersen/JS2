@@ -27,6 +27,12 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 theme: minima
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'highlight'
 
 plugins:
   - jekyll-feed

@@ -10,14 +10,14 @@ Full module on github: <a href="https://github.com/jeffwpetersen/drupal_8_xml_im
 
 Import content into Drupal 8 with associated image files using a csv or xml file. Importing will require 2 configuration files. One for the images and one for the nodes.
 Image files are references and need to be migrated and referenced using the id that uniquely identifies the imported item. This id is stored in the migrate system.
-
+<!-- more -->
 
 First configure the source of your images data, in this case I'm useing the XML parser.<br />
 Define your id: I'm using the name of the image which I have labled with the machine name name_image.<br />
 Next define field names and then source location and destination.
 
 
-<!-- more -->
+
 
 
 Import Images
