@@ -4,6 +4,7 @@ title:  "Featured Node in Block Module Using Taxonomy Term"
 date:   3020-05-18 00:00:18 -0500
 categories: posts
 excerpt_separator: <!-- more -->
+published: false
 ---
 
 Due to a limitaton of the mdoule

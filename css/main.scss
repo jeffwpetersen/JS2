@@ -1,11 +1,11 @@
 ---
 ---
 //@import "font-awesome/font-awesome";
+@import "breakpoint";
 @import "fonts";
 @import "normalize";
 @import "susy";
 @import "vendor/plumber";
-@import "breakpoint";
 @import "base";
 //@import "plugins/svg-grid";
 //@import "baseline-grid";
@@ -312,8 +312,4 @@ header {
     max-width: 100%;
     border: 1px solid lightgray;
   }
-}
-
-.b {
-  font-family: latobold;
 }
