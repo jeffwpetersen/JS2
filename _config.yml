@@ -47,7 +47,7 @@ sass:
     - node_modules/susy/sass
     - node_modules/normalize-scss/sass
 
-permalink: /:title/
+permalink: pretty
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
