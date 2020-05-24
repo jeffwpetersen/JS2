@@ -4,7 +4,7 @@ title:  "Taxonomy Menu Add Class Attributes"
 date:   2020-05-16 00:00:19 -0500
 categories: posts
 excerpt_separator: <!-- more -->
-permalink: drupal/taxonomy-menu-add-class-attributes
+permalink: drupal/taxonomy-menu-add-class-attributes.html
 ---
 
 I needed a menu based on a taxonomy for a high level sorting of blog posts. I generated a menu using the <a href="https://www.drupal.org/project/taxonomy_menu">Taxonomy Menu</a> module.

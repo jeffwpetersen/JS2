@@ -4,7 +4,7 @@ title:  "Drupal 8 related taxonomy contextual filter on nodes for a views block"
 date:   2020-05-18 00:00:01 -0500
 categories: posts
 excerpt_separator: <!-- more -->
-permalink: drupal/drupal-8-related-taxonomy-coutextual-filter-node-views-block
+permalink: drupal/drupal-8-related-taxonomy-coutextual-filter-node-views-block.html
 ---
 <p>
 For 2 nodes labeled with the same taxonomy, configure a block to show content tagged with that taxonomy.
