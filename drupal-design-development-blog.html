@@ -7,7 +7,7 @@ permalink: drupal-design-development-blog
     {% for post in site.posts %}
     <li>
         <h4>{{ post.title }}</h4>
-        {{ post.date | date: '%B %d, %Y' }}
+        <p class="gray">{{ post.date | date: '%B %d, %Y' }}</p>
         <div>
             {{ post.excerpt }}
             <a href="{{ post.url }}">Read More...</a>

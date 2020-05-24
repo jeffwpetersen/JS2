@@ -153,6 +153,14 @@ body {
   color: $pink;
 }
 
+.green {
+  color: $theme-comp;
+}
+
+.gray {
+  color: $gray-4;
+}
+
 .hidden {
   display: none;
 }
@@ -295,4 +303,17 @@ header {
       );
     }
   }
+}
+
+.blog {
+  img {
+    display: block;
+    margin: 2rem auto 3rem auto;
+    max-width: 100%;
+    border: 1px solid lightgray;
+  }
+}
+
+.b {
+  font-family: latobold;
 }

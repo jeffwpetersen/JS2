@@ -1,6 +1,6 @@
 ---
 layout: blog
-title:  "Taxonomy Menu Add Class Attributes Module"
+title:  "Taxonomy Menu Add Class Attributes"
 date:   2020-05-16 00:00:19 -0500
 categories: posts
 excerpt_separator: <!-- more -->

@@ -16,6 +16,8 @@ a {
   text-decoration: none;
 }
 
+
+
 .white {
   a {
     color: white;
@@ -206,11 +208,11 @@ a {
     }
   }
 
-  h4 {
+  h4, lh {
     font-family: $headline-font;
   }
 
-  h4, .h4-size {
+  h4, .h4-size, lh {
     @include plumber(
             $grid-height: $base-grid-height,
             $baseline: $headline-baseline,
@@ -240,8 +242,10 @@ a {
       );
     }
   }
-
-  ul li {
+  ul {
+    padding-left: 0;
+  }
+  ul li{
     @include plumber(
             $grid-height: $base-grid-height,
             $baseline: 0.158203,
@@ -249,6 +253,17 @@ a {
             $line-height: 2,
             $leading-top: 0,
             $leading-bottom: 1
+    );
+  }
+  ul lh {
+    display: block;
+    @include plumber(
+            $grid-height: $base-grid-height,
+            $baseline: 0.158203,
+            $font-size: 1.5,
+            $line-height: 2,
+            $leading-top: 0,
+            $leading-bottom: 2
     );
   }
 
@@ -268,8 +283,9 @@ a {
     }
   }
 
-  .bold {
+  .bold, b, .strong {
     font-weight: bold;
+    font-family: latobold;
   }
 
   .center {
