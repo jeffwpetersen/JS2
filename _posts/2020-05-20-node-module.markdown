@@ -7,7 +7,7 @@ excerpt_separator: <!-- more -->
 published: false
 ---
 
-Due to a limitaton of the mdoule
+Due to a limitation of the module
 
 <!-- more -->
 

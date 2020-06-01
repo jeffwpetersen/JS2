@@ -1,0 +1,64 @@
+---
+layout: blog
+title:  "Create a voteapi module"
+date:   2020-05-29 00:00:18 -0500
+categories: posts
+excerpt_separator: <!-- more -->
+published: true
+---
+
+Create a single vote in a drupal module.
+
+<!-- more -->
+
+
+https://drupal.stackexchange.com/questions/270495/what-should-i-use-in-drupal-8-instead-of-votingapi-set-vote
+
+VotingAPI docs are out of date. votingapi_set_vote() has been removed in Drupal 8.
+
+What should I use in its place to programmatically set votes (for instance in a migration)?
+
+{% highlight php %}
+use Drupal\votingapi\Entity\Vote;
+
+$vote = Vote::create(['type' => 'vote']); // this comes from /admin/structure/vote-types
+$vote->setVotedEntityType('node'); // entity type
+$vote->setVotedEntityId($nid); // node id
+$vote->setValueType('points'); // this comes from /admin/structure/vote-types
+$vote->setValue(1); // the number of points given per vote
+$vote->setOwnerId($uid); // the user id of the person who casted the vote
+$vote->setCreatedTime($timestamp) // timestamp of when vote was casted (optional)
+// it will use the current time if you don't include it
+$vote->save();
+{% endhighlight %}
+
+
+Drupal/modules/contrib/votingapi/src/Entity/Vote.php
+
+
+
+Create a custom display field or sudo field
+
+https://www.webomelette.com/creating-pseudo-fields-drupal-8
+https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21entity.api.php/function/hook_entity_extra_field_info/8.2.x
+
+
+drupal attach a library to a theme
+
+https://www.drupal.org/docs/theming-drupal/adding-stylesheets-css-and-javascript-js-to-a-drupal-theme
+
+{% highlight php %}
+
+
+(function ($) {
+    "use strict";
+    Drupal.behaviors.ThisIsWhatExactly?? = {
+        attach: function (context, settings) {
+            alert('working');
+        }
+    }
+})(jQuery);
+
+
+{% endhighlight %}
+
