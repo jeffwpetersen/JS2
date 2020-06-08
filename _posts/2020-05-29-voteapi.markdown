@@ -62,3 +62,43 @@ https://www.drupal.org/docs/theming-drupal/adding-stylesheets-css-and-javascript
 
 {% endhighlight %}
 
+https://medium.com/@ragasirtahk/drupal-module-a-page-which-demonstrates-the-ajax-alert-command-cfb8184f29bd
+
+
+Launching Drupal on Amazon Elastic Beanstalk.
+
+
+Amazon AWS DEVOPS
+Elastic Beanstalk
+PHP 7.3running on 64bit Amazon Linux 2
+
+Deploying a high-availability Drupal website with an external Amazon RDS database to Elastic Beanstalk
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-hadrupal-tutorial.html
+
+Deploying drupal on Elastic Beanstalk
+https://github.com/aws-samples/eb-php-drupal
+
+Using Elastic Beanstalk with Amazon Elastic File System
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/services-efs.html
+
+Using the EB CLI with Git
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-cli-git.html
+
+Deploying applications to Elastic Beanstalk environments
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+
+Using the EB CLI with Git
+
+1. Launch an instance of Elastic Beanstalk.
+
+1. Install Amazon CLI on your local environment.
+
+3. Create a Mysql database.
+
+3. Upload files to EB
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/services-efs.html
+
+"Elastic Beanstalk also provides sample applications that use Amazon EFS for shared storage. The two projects are configuration files that you can use with a standard WordPress or Drupal installer to run a blog or other content management system in a load balanced environment. When a user uploads a photo or other media, it is stored on an Amazon EFS file system, avoiding the need to use a plugin to store uploaded files in Amazon S3."
+
+https://github.com/aws-samples/eb-php-drupal
