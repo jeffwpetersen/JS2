@@ -6,37 +6,34 @@ categories: posts
 excerpt_separator: <!-- more -->
 published: true
 ---
-Setup and Launch a Drupal Build on Elastic Beanstalk.
-
-***** Elastic Beanstalk is difficult to provision servers. I attempted to add PHP Modules to the Ubuntu instance with no success. *****
+<div>Setup and Launch a Drupal Build on Elastic Beanstalk. </div>
+<p>***** Elastic Beanstalk is difficult to provision servers. I attempted to add PHP Modules to the Ubuntu instance with no success. *****</p>
 
 Install CLI
 IAM User
 Git
-
-
 <!-- more -->
 
 
 
 
-Regions, Availability Zones, and Local Zones
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+<h3>Regions, Availability Zones, and Local Zones
+</h3><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+">https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html</a>
+Amazon AWS DEVOPS<br/>
+Elastic Beanstalk<br/>
+PHP 7.3running on 64bit Amazon Linux 2<br/>
+<br/>
+<h3>Add Amazon IAM Identity and Access Management Console
+</h3>Add a user for your new instance.<br/>
+Generate an access key limited to the AwsCli tool.<br/>
+Dashboard | User | Security Credentials | Create Access Key<br/>
+Be sure to download the csv file. You will have to regenerate keys if you lose them.<br/>
 
-Amazon AWS DEVOPS
-Elastic Beanstalk
-PHP 7.3running on 64bit Amazon Linux 2
-
-Add Amazon IAM Identity and Access Management Console
-Add a user for your new instance.
-Generate an access key limited to the AwsCli tool.
-Dashboard | User | Security Credentials | Create Access Key
-Be sure to download the csv file. You will have to regenerate keys if you lose them.
-
-Install Amazon CLI on OSX
-The Amazon CLI allows you to run commands including setting up SSH access to your instance.
-https://www.youtube.com/watch?v=fzqRGWQX2LM
-: brew install awscli
+<h3>Install Amazon CLI on OSX
+</h3>The Amazon CLI allows you to run commands including setting up SSH access to your instance.<br/>
+<a href="https://www.youtube.com/watch?v=fzqRGWQX2LM">https://www.youtube.com/watch?v=fzqRGWQX2LM</a><br/>
+: brew install awscli<br/>
 
 <pre>
 The "examples" directory has been installed to:
@@ -51,28 +48,28 @@ zsh completions and functions have been installed to:
 🍺  /usr/local/Cellar/awscli/2.0.19: 11,101 files, 79.9MB
 </pre>
 
-Once installed the aws command line command can be used.
-
-aws
-aws ls
-aws configure
-aws s3 ls
-This shows you a list of the available S3 buckets
+<h3>Once installed the aws command line command can be used.
+</h3>
+aws<br/>
+aws ls<br/>
+aws configure<br/>
+aws s3 ls<br/>
+This shows you a list of the available S3 buckets<br/>
 
 
 ************************************************************************************
 
-Install the EB CLI with homebrew On OSX
-The Amazon Elastic Beanstalk CLI allows you to run commands including setting up SSH access to your instance.
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html
-Use Homebrew to install Amazon CLI.
-: brew install awsebcli
-: eb init
-: eb
+<h3>Install the EB CLI with homebrew On OSX
+</h3>The Amazon Elastic Beanstalk CLI allows you to run commands including setting up SSH access to your instance.<br/>
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html<br/>
+Use Homebrew to install Amazon CLI.<br/>
+: brew install awsebcli<br/>
+: eb init<br/>
+: eb<br/>
 
-Do you want to set up SSH for your instances?
-eb ssh
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-ssh.html
+Do you want to set up SSH for your instances?<br/>
+eb ssh<br/>
+<a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-ssh.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-ssh.html</a><br/>
 
 
 
