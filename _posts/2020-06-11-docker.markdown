@@ -1,0 +1,32 @@
+---
+layout: blog
+title:  "Docker for Drupal and AWS"
+date:   2020-06-11 00:00:18 -0500
+categories: posts
+excerpt_separator: <!-- more -->
+published: true
+summary: Building out an AWS Docker solution for Drupal.
+---
+
+Dockerize an Existing Project
+https://drupalize.me/tutorial/dockerize-existing-project?p=3040
+
+<!-- more -->
+
+
+port is already allocated
+-p ####:80 - map port #### of the host to port 80 in the container
+
+-p ####:80 - map port #### of the host to port 80 in the container
+
+docker run -p 81:80 docker/getting-started
+
+	
+How to Deploy Drupal with Docker Containers
+https://www.ctl.io/developers/blog/post/drupal-php-docker-containers
+
+6 Reasons To Deploy Drupal 8 With Docker
+https://blog.wodby.com/6-reasons-to-deploy-drupal-8-with-docker-how-to-guide-b2f073e61672
+
+Containers on AWS: An Introduction
+https://www.youtube.com/watch?v=kBi-s3eV2Ec

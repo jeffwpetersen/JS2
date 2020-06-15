@@ -1,6 +1,7 @@
 ---
 layout: blog
 title:  "Drupal 8 image migration with images from xml or csv file"
+description: "Import content into Drupal 8 with associated image files using a csv or xml file."
 date:   2017-05-04 00:00:19 -0500
 categories: posts
 excerpt_separator: <!-- more -->
