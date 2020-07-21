@@ -8,10 +8,60 @@ published: true
 summary: Building out an AWS Docker solution for Drupal.
 ---
 
+Compiling research on building out a Docker based blog.
+
+<!-- more -->
+
 Dockerize an Existing Project
 https://drupalize.me/tutorial/dockerize-existing-project?p=3040
 
-<!-- more -->
+docker-compose build
+https://docs.docker.com/compose/reference/build/
+
+alternet port settings
+https://stackoverflow.com/questions/50456780/run-mysql-on-port-3307-using-docker-compose
+
+How to import database in MySQL in Docker?
+https://gist.github.com/geraldvillorente/4c60e7fdb5562f443f16ad2bbe4235ce
+
+"Login to your Docker instance"
+
+How To SSH Into A Running Docker Container And Run Commands
+https://phoenixnap.com/kb/how-to-ssh-into-docker-container
+
+docker exec -it doc_coupa_web_1 /bin/bash
+
+login to mysql docker.
+https://www.techrepublic.com/article/how-to-deploy-and-use-a-mysql-docker-container/#:~:text=Logging%20into%20the%20MySQL%20Server&text=Use%20the%20password%20revealed%20by,new%20password%20to%20be%20used.
+The MySQL password
+docker logs container_name
+
+dock
+Load a database into docker.
+https://gist.github.com/geraldvillorente/4c60e7fdb5562f443f16ad2bbe4235ce
+docker exec -i mysql_container mysql -uroot -psecret mysql < db.sql
+
+docker exec -i doc_coupa_db_1 mysql -uroot -psecret drupaldb < sql.mysql
+
+How to add new host entry in /etc/hosts when a docker container is run
+https://www.thegeekdiary.com/how-to-add-new-host-entry-in-etc-hosts-when-a-docker-container-is-run/#:~:text=Generally%20speaking%2C%20%2Fetc%2Fhosts,creating%20a%20new%20docker%20container.
+
+How To Run Your Entire Development Environment in Docker Containers on macOS
+https://medium.com/better-programming/php-how-to-run-your-entire-development-environment-in-docker-containers-on-macos-787784e94f9a
+
+Is it possible to configure a virtualhost in a docker container with Apache?
+https://forums.docker.com/t/is-it-possible-to-configure-a-virtualhost-in-a-docker-container-with-apache/74808
+
+https://medium.com/@francoisromain/set-a-local-web-development-environment-with-custom-urls-and-https-3fbe91d2eaf0
+Set a local web development environment with custom Urls and HTTPS
+
+Can I map a IP address and a port with /etc/hosts?
+https://superuser.com/questions/1192774/can-i-map-a-ip-address-and-a-port-with-etc-hosts
+What David Postill says is correct, but if you are really hoping to get rid of the 8000 port for local testing you might want to investigate setting up a reverse proxy via Apache or Nginx. That is the most common and accepted way to map a port-based address like 127.0.0.1:8000 to testdev.com. – JakeGould Mar 27 '17 at 13:29
+
+Running virtual hosts in apache docker container
+https://stackoverflow.com/questions/55939079/running-virtual-hosts-in-apache-docker-container
+
 
 
 port is already allocated
@@ -30,3 +80,44 @@ https://blog.wodby.com/6-reasons-to-deploy-drupal-8-with-docker-how-to-guide-b2f
 
 Containers on AWS: An Introduction
 https://www.youtube.com/watch?v=kBi-s3eV2Ec
+
+
+Commands
+
+docker
+docker-compose
+
+
+
+
+cd path/to/project
+docker-compose kill
+docker-compose rm -fv
+docker-compose pull
+docker-compose up -d
+
+    -d, --detach               Detached mode: Run containers in the background,
+    
+    
+    
+    git repository 
+    
+    settings.php has
+    $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+    include $app_root . '/' . $site_path . '/settings.local.php';
+
+    settings.local.php
+    has
+    local.development.services.yml
+    and Databse Connection
+
+
+Load mysql
+docker exec -i doc_coupa_db_1 mysql -uroot -psecret drupaldb < sql.mysql
+
+Connect to cli to run drush.
+docker exec -it doc_coupa_web_1 /bin/bash
+
+
+https://www.jeffgeerling.com/blog/2019/running-drupal-kubernetes-docker-production
+Running Drupal in Kubernetes with Docker in production

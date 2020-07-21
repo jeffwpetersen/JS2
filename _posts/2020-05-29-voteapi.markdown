@@ -64,3 +64,53 @@ https://www.drupal.org/docs/theming-drupal/adding-stylesheets-css-and-javascript
 
 https://medium.com/@ragasirtahk/drupal-module-a-page-which-demonstrates-the-ajax-alert-command-cfb8184f29bd
 
+
+How do I append a view to the node body in custom module?
+https://drupal.stackexchange.com/questions/198828/how-do-i-append-a-view-to-the-node-body-in-custom-module
+
+How to render a view programmatically and set as node field?
+https://drupal.stackexchange.com/questions/230743/how-to-render-a-view-programmatically-and-set-as-node-field?rq=1
+
+Display-only Pseudo Fields in Drupal 8
+https://agileadam.com/2019/04/display-only-pseudo-fields-in-drupal-8/
+
+Pseudo fields in Drupal 8
+https://dev.studiopresent.com/blog/back-end/pseudo-fields-drupal-8
+
+Drupal 8 - Override the rendering of node page using hook
+https://openwritings.net/pg/drupal/drupal-8-override-rendering-node-page-using-hook
+
+Create form with ajax callback.
+https://www.drupal.org/forum/support/module-development-and-code-questions/2012-01-18/update-multiple-fields-with-ajax
+   
+How To Use AJAX API in Drupal 8?
+https://opensenselabs.com/blog/tech/how-use-ajax-api-drupal-8
+
+https://www.drupal.org/forum/support/installing-drupal/2011-01-27/an-ajax-http-error-occurred-http-result-code-200
+An AJAX HTTP error occurred. HTTP Result Code: 200
+Drupal\Core\Form\FormAjaxException: in Drupal\Core\Form\FormBuilder->buildForm() 
+(line 339 of /core/lib/Drupal/Core/Form/FormBuilder.php).
+
+https://drupal.stackexchange.com/questions/212438/controller-function-use-with-ajax
+controller function use with ajax
+
+How to programmatically give node a rating by user?
+https://www.drupal.org/project/rate/issues/1620112
+
+Ajax for Like and Dislike using voting API | Drupal
+https://www.amitavroy.com/justread/content/articles/ajax-and-dislike-using-voting-api-drupal
+
+How do I trigger a modal from a template that points to a controller returning an AJAX response
+https://drupal.stackexchange.com/questions/277693/how-do-i-trigger-a-modal-from-a-template-that-points-to-a-controller-returning-a
+
+Chapter 4. Drupal Programming Examples
+https://www.oreilly.com/library/view/programmers-guide-to/9781491911457/ch04.html#wrapper_ajax
+
+
+
+What should I use in Drupal 8 instead of votingapi_set_vote()?
+https://drupal.stackexchange.com/questions/270495/what-should-i-use-in-drupal-8-instead-of-votingapi-set-vote
+
+after searching
+https://makedrupaleasy.com/articles/drupal-8-how-get-your-star-ratings-google-search-results
+Drupal 8: How to Get Your Star Ratings in Google Search Results

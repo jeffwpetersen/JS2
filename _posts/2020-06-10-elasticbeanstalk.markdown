@@ -160,3 +160,20 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions.html
 
 UGH!
 No good info on provisioning the OS instance.
+
+
+Deploying a Docker Container to AWS with Elastic Beanstalk
+https://medium.com/@sommershurbaji/deploying-a-docker-container-to-aws-with-elastic-beanstalk-28adfd6e7e95
+Create an environment with
+eb create
+
+
+Stack deletion failed: The following resource(s) failed to delete: [AWSEBSecurityGroup, AWSEBLoadBalancerSecurityGroup].
+
+
+Drupal Docker on Amazon
+Deploying Drupal with MySQL database on Amazon EKS cluster using Amazon EFS
+https://medium.com/@srank2000/deploying-drupal-with-mysql-database-on-amazon-eks-cluster-using-amazon-efs-150b6c36e183
+UGH Dev ops
+
+

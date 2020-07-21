@@ -20,26 +20,26 @@ Create a block view with the appropriate Filter Criteria: Content Type etc...
 
 <img src="/images/views-contextual-filters/id-contextual-filter-drupal.jpg">
 
-    <ul>
-      <lh>Contextual Filters - Content: ID</lh>
-      <li>Select provide a default value and choose Content ID from URL.<p class="gray">this does what it does</p></li>
-      <li>Under More tab - Check next to Exclude<p class="gray">this does what it does</p></li>
-    </ul>
+    
+- Contextual Filters - Content: ID</lh>
+- Select provide a default value and choose Content ID from URL.<p class="gray">this does what it does</p></li>
+- Under More tab - Check next to Exclude<p class="gray">this does what it does</p></li>
+    
 
 
 
 <img src="/images/views-contextual-filters/views-contextual-filter-content-id.jpg">
 
 
-    <ul>
-      <lh>Contextual Filter - Content: Has taxonomy term ID</lh>
-      <li>When filter is not available - Provide a default value - Taxonomy term ID from url</li>
-      <li>Uncheck, load default filter from term page</li>
-      <li>Check, Load default filter from node page, that's good for related taxonomy block</li>
-     <li>Multiple value handling:&nbsp;<strong>Filter to items that share any value</strong></li>
-     <li>Check, Reduce Duplicates</li>
-     <li>Under more tab check:&nbsp;<strong>Allow multiple values</strong>&nbsp;and&nbsp;<strong>Allow multiple values to work together.</strong></li>
-    </ul>
+
+- Contextual Filter - Content: Has taxonomy term ID
+- When filter is not available - Provide a default value - Taxonomy term ID from url
+- Uncheck, load default filter from term page
+- Check, Load default filter from node page, that's good for related taxonomy block
+- Multiple value handling:&nbsp;<strong>Filter to items that share any value</strong>
+- Check, Reduce Duplicates
+- Under more tab check:&nbsp;<strong>Allow multiple values</strong>&nbsp;and&nbsp;<strong>Allow multiple values to work together.</strong>
+
 
 <img src="/images/views-contextual-filters/taxonomy-term-views-contextual-filter.jpg">
 
